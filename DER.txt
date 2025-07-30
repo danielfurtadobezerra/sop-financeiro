@@ -1,0 +1,51 @@
+Entidades e Atributos
+Despesa
+
+id (PK)
+
+numeroProtocolo (unique)
+
+tipoDespesa
+
+dataProtocolo
+
+dataVencimento
+
+credor
+
+descricao
+
+valor
+
+status
+
+Empenho
+
+id (PK)
+
+numeroEmpenho
+
+dataEmpenho
+
+valorEmpenhado
+
+despesa_id (FK para Despesa)
+
+Pagamento
+
+id (PK)
+
+numeroPagamento
+
+dataPagamento
+
+valorPago
+
+empenho_id (FK para Empenho)
+
+Relacionamentos
+Despesa 1 — * Empenhos
+(Uma despesa pode ter vários empenhos)
+
+Empenho 1 — * Pagamentos
+(Um empenho pode ter vários pagamentos)
