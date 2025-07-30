@@ -9,7 +9,6 @@ interface Empenho {
   numeroEmpenho: string;
   dataEmpenho: string;
   valor: number;
-  // Adicione outros campos conforme necessário
 }
 
 export default function EmpenhosPage() {

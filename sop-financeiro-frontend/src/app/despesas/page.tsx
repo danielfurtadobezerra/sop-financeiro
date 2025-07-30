@@ -4,10 +4,8 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchDespesas } from '../../store/despesasSlice';
 import { useRouter, useParams } from 'next/navigation';
-import { createDespesa } from '../../services/despesasService';
 import type { RootState, AppDispatch } from '../../store/store';
 import Link from 'next/link';
-import axios from 'axios';
 
 export default function DespesasPage() {
   const router = useRouter();
@@ -42,7 +40,6 @@ const handleEditar = (id: string) => {
     <main className="p-6">
       <h1 className="text-3xl font-bold mb-6 text-center">Lista de Despesas</h1>
 
-      {/* Wrapper do formulário centralizado */}
       <div className="bg-white p-4 rounded-lg shadow-md w-full max-w-6xl mb-10 ml-6">
         <div className="bg-white p-4 rounded-lg shadow-md w-full max-w-6xl mb-10 ml-6">
           <div className="flex justify-between items-center mb-4">
@@ -90,7 +87,6 @@ const handleEditar = (id: string) => {
         </div>
       </div>
 
-      {/* Tabela */}
       {loading ? (
         <p className="text-center">Carregando despesas...</p>
       ) : error ? (
@@ -118,9 +114,7 @@ const handleEditar = (id: string) => {
                   <td className="border border-gray-300 p-2">{despesa.valor.toFixed(2)}</td>
                   <td className="border border-gray-300 p-2">{despesa.status ?? 'Sem status'}</td>
 
-                  {/* Nova coluna para os botões */}
                   <td className="border border-gray-300 p-2 flex gap-2 justify-center">
-                    {/* Botão Editar */}
                     <button
                       onClick={() => handleEditar(despesa.id.toString())}
                       className="bg-yellow-400 hover:bg-yellow-500 text-white px-3 py-1 rounded"
@@ -128,7 +122,6 @@ const handleEditar = (id: string) => {
                       Editar
                     </button>
 
-                    {/* Botão Excluir */}
                     <button
                       onClick={async () => {
                         if (confirm('Tem certeza que deseja excluir essa despesa?')) {
@@ -139,7 +132,7 @@ const handleEditar = (id: string) => {
 
                             if (response.ok) {
                               alert('Despesa excluída com sucesso.');
-                              location.reload(); // ou recarregue via router, se quiser
+                              location.reload(); 
                             } else {
                               alert('Erro ao excluir a despesa.');
                             }

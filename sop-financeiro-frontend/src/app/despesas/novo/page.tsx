@@ -37,7 +37,7 @@ export default function NovaDespesaPage() {
       };
 
       await createDespesa(data);
-      router.push('/despesas'); // Redireciona para a lista
+      router.push('/despesas');
     } catch (err) {
       console.error('Erro ao criar despesa:', err);
       alert('Erro ao criar despesa.');

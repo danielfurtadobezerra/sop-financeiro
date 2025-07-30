@@ -22,7 +22,6 @@ const initialState: EmpenhoState = {
   error: null,
 };
 
-// Async thunk para buscar empenhos da API
 export const fetchEmpenhos = createAsyncThunk('empenhos/fetch', async () => {
   return await getEmpenhos();
 });

@@ -10,8 +10,7 @@ public class PagamentoDTO {
     private BigDecimal valor;
     private String observacao;
 
-    private Long empenhoId; // Referência ao Empenho
+    private Long empenhoId;
 
-    // Getters e Setters
 }
 

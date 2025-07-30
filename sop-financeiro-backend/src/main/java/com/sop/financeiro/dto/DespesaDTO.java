@@ -18,5 +18,4 @@ public class DespesaDTO {
 
     private List<EmpenhoDTO> empenhos;
 
-    // Getters e Setters
 }

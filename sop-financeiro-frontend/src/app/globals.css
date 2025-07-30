@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Seu CSS customizado abaixo */
 
 :root {
   --background: #ffffff;

@@ -34,7 +34,6 @@ public class DespesaService {
         despesaRepository.deleteById(id);
     }
 
-// Remove custom query from service; implement in repository instead.
     public List<Despesa> buscarDespesas(String numeroProtocolo, String tipoDespesa, LocalDate dataProtocolo) {
         return despesaRepository.buscarDespesas(numeroProtocolo, tipoDespesa, dataProtocolo);
     }
@@ -43,7 +42,6 @@ public class DespesaService {
     Despesa despesaExistente = despesaRepository.findById(id)
         .orElseThrow(() -> new RuntimeException("Despesa não encontrada"));
 
-    // Atualizar campos simples
     despesaExistente.setNumeroProtocolo(novaDespesa.getNumeroProtocolo());
     despesaExistente.setTipoDespesa(novaDespesa.getTipoDespesa());
     despesaExistente.setDataProtocolo(novaDespesa.getDataProtocolo());
@@ -53,11 +51,10 @@ public class DespesaService {
     despesaExistente.setValor(novaDespesa.getValor());
     despesaExistente.setStatus(novaDespesa.getStatus());
 
-    // Atualizar empenhos com segurança
     despesaExistente.getEmpenhos().clear();
     if (novaDespesa.getEmpenhos() != null) {
         novaDespesa.getEmpenhos().forEach(emp -> {
-            emp.setDespesa(despesaExistente); // importante: manter vínculo bidirecional
+            emp.setDespesa(despesaExistente); 
             despesaExistente.getEmpenhos().add(emp);
         });
     }

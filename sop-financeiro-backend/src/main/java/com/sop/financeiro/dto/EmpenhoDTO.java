@@ -11,9 +11,8 @@ public class EmpenhoDTO {
     private BigDecimal valor;
     private String observacao;
 
-    private Long despesaId; // Referência à Despesa
+    private Long despesaId; 
     private List<PagamentoDTO> pagamentos;
 
-    // Getters e Setters
 }
 

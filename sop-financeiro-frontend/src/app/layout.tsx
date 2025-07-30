@@ -1,6 +1,5 @@
 import './globals.css'
 import type { Metadata } from 'next'
-// Update the import path to match the actual file location and extension
 import ReduxProvider from './reduxProvider'
 
 export const metadata: Metadata = {

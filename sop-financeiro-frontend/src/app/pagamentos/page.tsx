@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchPagamentos } from '../../store/pagamentosSlice'; // ajuste conforme seu slice
+import { fetchPagamentos } from '../../store/pagamentosSlice'; 
 import type { RootState, AppDispatch } from '../../store/store';
 
 export default function PagamentoPage() {
